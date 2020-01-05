@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html;charset=GBK-8">
+<html align='left'>
+<h1>测试报告</h1>
+    <body>
+    <h2>报告综述</h2>
+    <p>开始时间 : {{start_time}}&nbsp;&nbsp;结束时间 : {{stop_time}}  </p>
+    <p>检测结果 : ***&nbsp;&nbsp;其它信息：***</p>
+    <h2>详细信息</h2>
+    <table border="1" width = "40%" cellspacing='0' cellpadding='0' align='left'>
+    <tr>
+        <th>TestCase编号</th>
+        <th>描述</th>
+        <th>运行结果</th>
+        <!--<th>详细信息</th>-->
+    </tr>
+
+    {% for item in body %}
+    <tr align='center'>
+        <td>{{ item.ID }}</td>
+        <td>{{ item.Desc }}</td>
+        <td>{{ item.Result }}</td>
+        <!--<td><a href={{item.image_path}}>图片</a> </td>-->
+    </tr>
+    {% endfor%}
+    </table>
+    </body>
+</html>
